@@ -10,7 +10,7 @@ const PlantGuide = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    axios.get('http://localhost:5003/plantmanager/')
+    axios.get('http://localhost:5003/plantguides/')
       .then(response => setGuides(response.data))
       .catch(error => console.error(error));
   }, []);
