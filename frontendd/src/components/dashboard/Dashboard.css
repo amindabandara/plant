@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #e9ebee, #dce1dd);
+    font-family: Arial, sans-serif;
+  }
+  
+  .dashboard-wrapper {
+    display: flex;
+  }
+  
+  .dashboard-container {
+    margin-left: 150px; /* Adjust margin to avoid content being hidden behind the sidebar */
+    padding: 120px;
+    background: #ffffff; /* White background for the container */
+    border-radius: 16px; /* Rounded corners */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    flex-grow: 1; /* Make it take the remaining space */
+  }
+  
+  .table {
+    margin-top: 20px;
+    width: 100%; /* Make the table take the full width of the container */
+  }
+  
+  .logout-button {
+    padding: 10px 20px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .logout-button:hover {
+    background-color: #e60000;
+  }
+  
+  h2 {
+    font-weight: bold;
+    color: #333; /* Darker color for headings */
+  }
+  
