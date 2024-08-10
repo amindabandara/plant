@@ -7,7 +7,7 @@ const VideoTutorial = () => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5003/videomanager/')
+    axios.get('http://localhost:5003/videotutorials/')
       .then(response => setVideos(response.data))
       .catch(error => console.error(error));
   }, []);
