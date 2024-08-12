@@ -12,6 +12,8 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5003';
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -24,7 +26,7 @@ const Login = () => {
     e.preventDefault();
     setLoading(true); // Set loading state while submitting
 
-    axios.post('http://localhost:5003/login', formData)
+    axios.post(`${apiUrl}/login`, formData)
       .then(response => {
         setLoading(false);
         console.log('Login response:', response.data);
@@ -95,6 +97,3 @@ const Login = () => {
 };
 
 export default Login;
-
-
-
