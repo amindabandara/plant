@@ -18,7 +18,7 @@
   "env": {
     "REACT_APP_API_URL": "https://plant-api-one.vercel.app"
   },
-  "production": {
+  "build": {
     "env": {
       "REACT_APP_API_URL": "https://plant-api-one.vercel.app"
     }
@@ -29,3 +29,5 @@
     }
   }
 }
+
+
