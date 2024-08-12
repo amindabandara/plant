@@ -14,7 +14,9 @@ const app = express();
 const PORT = process.env.PORT || 5003;
 const mongoURI = process.env.MONGO_URI;
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://plant-frontend-zeta.vercel.app', // Adjust this to match your frontend URL
+}));
 app.use(express.json());
 
 // Log MongoDB URI (remove this in production)
@@ -60,7 +62,6 @@ app.post('/register', async (req, res) => {
   }
 });
 
-
 // Login employee
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
@@ -84,8 +85,6 @@ app.post('/login', async (req, res) => {
     res.status(500).json({ status: 'Internal Server Error', error: err.message });
   }
 });
-
-
 
 // Dashboard route
 app.get('/dashboard', authenticateJWT, async (req, res) => {
@@ -121,5 +120,3 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
-
