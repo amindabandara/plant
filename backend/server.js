@@ -10,6 +10,7 @@ const PlantGuideRouter = require('./routes/plantguides');
 const VideoTutorialRouter = require('./routes/videotutorial');
 require('dotenv').config();
 
+const apiUrl = process.env.production.REACT_APP_API_URL;
 const app = express();
 const PORT = process.env.PORT || 5003;
 const mongoURI = process.env.MONGO_URI;
@@ -63,7 +64,7 @@ app.post('/register', async (req, res) => {
 });
 
 // Login employee
-app.post('/login', async (req, res) => {
+ axios.post(`${apiUrl}/login`, async (req, res) => {
   const { email, password } = req.body;
 
   try {
