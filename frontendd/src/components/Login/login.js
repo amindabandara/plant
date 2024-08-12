@@ -12,7 +12,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const apiUrl = process.env.production.REACT_APP_API_URL || 'http://localhost:5003';
+  //const apiUrl = process.env.production.REACT_APP_API_URL || 'http://localhost:5003';
 
   const handleChange = (e) => {
     const { name, value } = e.target;
