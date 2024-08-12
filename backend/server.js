@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 5003;
 const mongoURI = process.env.MONGO_URI;
 
 app.use(cors({
-  origin: 'https://plant-frontend-zeta.vercel.app', // Adjust this to match your frontend URL
+  origin: 'plant-frontend-g6sw4hjjz-amindas-projects-fd3b8637.vercel.app', // Adjust this to match your frontend URL
 }));
 app.use(express.json());
 
