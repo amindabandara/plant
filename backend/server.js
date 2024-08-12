@@ -10,13 +10,13 @@ const PlantGuideRouter = require('./routes/plantguides');
 const VideoTutorialRouter = require('./routes/videotutorial');
 require('dotenv').config();
 
-const apiUrl = process.env.production.REACT_APP_API_URL;
 const app = express();
 const PORT = process.env.PORT || 5003;
 const mongoURI = process.env.MONGO_URI;
+const apiUrl = process.env.REACT_APP_API_URL; // Corrected environment variable access
 
 app.use(cors({
-  origin: 'plant-frontend-g6sw4hjjz-amindas-projects-fd3b8637.vercel.app', // Adjust this to match your frontend URL
+  origin: 'https://plant-frontend-g6sw4hjjz-amindas-projects-fd3b8637.vercel.app', // Adjust this to match your frontend URL
 }));
 app.use(express.json());
 
@@ -64,7 +64,7 @@ app.post('/register', async (req, res) => {
 });
 
 // Login employee
- axios.post(`${apiUrl}/login`, async (req, res) => {
+app.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -121,3 +121,4 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
