@@ -13,7 +13,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   // Correctly access environment variable
-  const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5003';
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
